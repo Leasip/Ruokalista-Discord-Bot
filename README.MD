@@ -1,9 +1,17 @@
-# Vyk ruokalista discord botti v1.1.2
+# Vyk ruokalista discord botti v1.2
 
 # Tämä repo on kopioitu yksityisestä reposta. Ainoa muutos on yksityisen tiedon piiloittaminen, kuten discord botin tokeni.
 
 ## Asennus
-Olettaen, että python on asennettuna ja linux käyttöjärjestelmä käyttää systemd.
+
+Salli asennustiedostojen suorittaminen nykyisellä käyttäjällä.
 ```bash
-sudo ./install.sh
+chmod u+x setup.sh setup_systemd.sh tools/generate_regs.sh
+```
+
+Suorita asennusohjelma. Skripti luo pythonille virtuaali ympäristön ja asentaa tarvittavat python riippuvuudet.
+Sen jälkeen se pyytää tarvittavat discord tokenit, mikäli config.py tiedostoa ei ole olemassa.
+Skripti käyttää systemd ajastimia toimiakseen.
+```bash
+./setup.sh
 ```
