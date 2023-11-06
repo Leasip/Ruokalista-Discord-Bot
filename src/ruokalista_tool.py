@@ -111,7 +111,8 @@ def get_ruokalista() -> (str | int):
     modified_string = soup.get_text()
     #remove LOUNAS from string
     modified_string = modified_string.replace("LOUNAS", "")
-
+    #add spaces before big letters
+    modified_string = re.sub(r"([A-Z])", r" \1", modified_string)
     # Check if it's holiday. It should contain "vapaapäivä"
     if "Vapaapäivä" in modified_string:
         return 0
