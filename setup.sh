@@ -12,7 +12,7 @@ chmod u+x ./tools/generate_regs.sh
 $venv_pip install -r requirements.txt
 
 # Run secrets setup if config.py doesn't exist
-if [ ! -f config.py ]; then
+if [ -f config.py ]; then
     $venv_python src/setup.py
 fi
 
